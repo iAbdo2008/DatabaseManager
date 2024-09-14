@@ -12,6 +12,7 @@
             "name": "oPinqzz"
         }
     ],
+    "version": "1.0.0",
     "minimum-stability": "stable",
     "autoload": {"classmap": ["src"]},
     "extra": {
