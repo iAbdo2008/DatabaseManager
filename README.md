@@ -26,8 +26,8 @@ For Intialization in ```php onEnable() : void {}```
 - For Fetching a Query ( Using Await Generators By SoFE ):
   ```php
      Await::f2c(function() use ($database_manager) {
-            $result = yield from Await::promise(fn($accept, $refuse) => $database_manager->getQueriesManager()->fetchQuery("SELECT * FROM PlayersData WHERE player_name = 'pname'", ["type" => "fetch"], ["pname" => "oPinqzz"], $accept, $refuse));
-            echo $result["player_uuid"];
+            $result = yield from Await::promise(fn($accept, $refuse) => $database_manager->getQueriesManager()->fetchQuery("SELECT * FROM MeowTesting WHERE player_name = 'pname'", ["type" => "fetch"], ["pname" => "oPinqzz"], $accept, $refuse));
+            echo $result["player_xuid"];
         });  
   ```
 
