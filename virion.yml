@@ -1,0 +1,5 @@
+name: DatabaseManager
+author: oPinqzz
+antigen: DatabaseManager\PixalsLibs
+api: [ 5.0.0 ]
+version: 1.0.0
