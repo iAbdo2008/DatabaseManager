@@ -1,0 +1,28 @@
+{
+  "name": "cooldogedev/libsql",
+  "description": "A minimalistic implementation of asynchronous SQL",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "cooldogedev",
+      "email": "cooldogedev@gmail.com"
+    }
+  ],
+  "autoload": {
+    "classmap": ["src"]
+  },
+  "minimum-stability": "stable",
+  "require": {
+    "ext-pmmpthread": "*",
+    "ext-sqlite3": "*",
+    "ext-mysqli": "*",
+    "ext-igbinary": "*"
+  },
+  "extra": {
+    "virion": {
+      "spec": "3.1",
+      "namespace-root": "cooldogedev\\libSQL"
+    }
+  }
+}

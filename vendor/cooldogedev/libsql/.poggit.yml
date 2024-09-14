@@ -1,0 +1,12 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/cooldogedev/libSQL
+build-by-default: true
+branches:
+- main
+- pm5
+projects:
+  libSQL:
+    path: ""
+    model: virion
+    type: library
+...
+

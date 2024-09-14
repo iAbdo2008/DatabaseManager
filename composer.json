@@ -1,0 +1,23 @@
+{
+    "name": "opinqzz/databasemanager",
+    "description": "A Database Managing Library Made By Pixals Lead Developer",
+    "type": "library",
+    "require": {
+        "cooldogedev/libsql": "^0.2.6",
+        "sof3/await-generator": "^3.6",
+        "pocketmine/pocketmine-mp": "5.18.1"
+    },
+    "authors": [
+        {
+            "name": "oPinqzz"
+        }
+    ],
+    "minimum-stability": "stable",
+    "autoload": {"classmap": ["src"]},
+    "extra": {
+        "virion": {
+            "spec": "3.0",
+            "namespace-root": "DatabaseManager\\PixalsLibs"
+        }
+    }
+}

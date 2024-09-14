@@ -1,0 +1,12 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Unreachable statement \\- code above always terminates\\.$#"
+			count: 1
+			path: await-generator/src/SOFe/AwaitGenerator/Await.php
+
+		- # https://github.com/phpstan/phpstan/issues/6344
+			message: "#^Negated boolean expression is always false\\.$#"
+			count: 1
+			path: await-generator/src/SOFe/AwaitGenerator/Mutex.php
+
