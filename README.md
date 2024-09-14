@@ -3,6 +3,10 @@ Easy Way to Execute and Fetch Queries Using LibSQL By cooldogdev
 
 
 # API Implementation
+- Installation Using Composer 
+```composer require opinqzz/databasemanager dev-main```
+
+
 ```php
 $database_manager = new DatabaseManager;
 $database_manager->connectDB($ip, $username, $password, $database, $port, $this);
