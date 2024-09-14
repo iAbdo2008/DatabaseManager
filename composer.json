@@ -14,6 +14,7 @@
     ],
     "minimum-stability": "stable",
     "autoload": {"classmap": ["src"]},
+    "version": "1.0.0",
     "extra": {
         "virion": {
             "spec": "3.0",

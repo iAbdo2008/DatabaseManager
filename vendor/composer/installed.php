@@ -1,7 +1,7 @@
 <?php return array(
     'root' => array(
         'name' => 'opinqzz/databasemanager',
-        'pretty_version' => '1.0.0+no-version-set',
+        'pretty_version' => '1.0.0',
         'version' => '1.0.0.0',
         'reference' => null,
         'type' => 'library',
@@ -50,7 +50,7 @@
             ),
         ),
         'opinqzz/databasemanager' => array(
-            'pretty_version' => '1.0.0+no-version-set',
+            'pretty_version' => '1.0.0',
             'version' => '1.0.0.0',
             'reference' => null,
             'type' => 'library',
