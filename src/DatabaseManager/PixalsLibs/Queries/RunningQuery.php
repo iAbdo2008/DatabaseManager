@@ -45,7 +45,7 @@ class RunningQueries extends MySQLQuery {
             $statement = $connection->prepare($query);
             $statement->execute();
             $result = mysqli_stmt_get_result($statement);
-            $this->setResult($result->fetch_array(MYSQLI_ASSOC));
+            $this->setResult($result->fetch_all(MYSQLI_ASSOC));
         }
     }
 
