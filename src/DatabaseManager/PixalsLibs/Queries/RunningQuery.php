@@ -19,17 +19,13 @@ class RunningQueries extends AtlasQuery {
     public function __construct(String $query, array $options, array $vars)
     {
         if($options["type"] == "execute") {
-            if($vars == null) {
-                new InvalidArgumentException("The Variable of The Execution Queries Should Not Be Null");
-            } else {
-                $this->query = serialize($query);
-                $this->options = serialize($options);
-                $this->vars = serialize($vars);
-            }
+            $this->query = serialize($query);
+            $this->options = serialize($options);
+            $this->vars = serialize($vars);
 
         } else if($options["type"] == "fetch") {
             if($vars == null) {
-                new InvalidArgumentException("The Varaibles of Fetching Queries Should Not Be Null");
+                throw new InvalidArgumentException("The Varaibles of Fetching Queries Should Not Be Null");
             } else {
                 $this->query = serialize($query);
                 $this->options = serialize($options);
