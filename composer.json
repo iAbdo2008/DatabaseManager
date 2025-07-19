@@ -5,7 +5,8 @@
     "require": {
         "cooldogedev/libsql": "^0.2.6",
         "sof3/await-generator": "^3.6",
-        "pocketmine/pocketmine-mp": "5.18.1"
+        "pocketmine/pocketmine-mp": "5.18.1",
+        "pixals/atlas": "dev-main"
     },
     "authors": [
         {
@@ -13,7 +14,7 @@
         }
     ],
     "version": "1.0.0",
-    "minimum-stability": "stable",
+    "minimum-stability": "1.0.0",
     "autoload": {"classmap": ["src"]},
     "version": "1.0.0",
     "extra": {
@@ -23,3 +24,5 @@
         }
     }
 }
+
+

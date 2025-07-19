@@ -2,6 +2,8 @@
 
 namespace DatabaseManager\PixalsLibs\Queries;
 
+use AtlasDB\PixalsLibs\queries\QueriesManager as AtlasQManager;
+use AtlasDB\PixalsLibs\result\DeferredResult;
 use Closure;
 use cooldogedev\libSQL\exception\SQLException;
 
@@ -10,20 +12,12 @@ final class QueriesManager {
 
     public function executeQuery(String $query, array $option, array $vars) : void {
         $running_query = new RunningQueries($query, $option, $vars);
-        $running_query->execute();  
+        (new AtlasQManager)->executeQuery($running_query);  
     }
     
     public function fetchQuery(String $query, array $options, array $vars, Closure $onSuccess, Closure $onFail = null) : void {
         $running_query = new RunningQueries($query, $options, $vars);
-        $running_query->execute(
-            onSuccess: fn(mixed $result) => $onSuccess(
-                $result
-            ),
-
-            onFail: fn(SQLException $e) => $onFail(
-                $e
-            )
-        );
+        (new AtlasQManager)->executeQuery($running_query, $onSuccess);  
     }
 
 }

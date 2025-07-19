@@ -3,30 +3,23 @@
 
 namespace DatabaseManager\PixalsLibs;
 
-
-use cooldogedev\libSQL\ConnectionPool;
+use AtlasDB\PixalsLibs\Connection;
+use AtlasDB\PixalsLibs\ConnectionManager;
 use DatabaseManager\PixalsLibs\Queries\QueriesManager;
 use pocketmine\plugin\PluginBase;
 
 final class DatabaseManager {
 
-    private $pool;
 
     public function connectDB(String $ip, String $username, String $password, String $db_name, int $port, PluginBase $plugin) : void {
-        $this->pool = new ConnectionPool(
-            $plugin,
-            [
-                "provider" => "mysql",
-                "threads" => 2,
-                "mysql" => [
-                    $ip,
-                    $username,
-                    $password,
-                    $db_name,
-                    $port
-                ]
-            ]
-        );
+        $connection_manager = new ConnectionManager;
+        $connection_manager->createConnection($plugin, [
+            "ip" => $ip,
+            "username" => $username,
+            "password" => $password,
+            "database" => $db_name,
+            "port" => $port
+        ]);
     }
 
 

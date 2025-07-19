@@ -148,6 +148,12 @@ class ComposerStaticInit8fcc8f34790a8f077bfecae050de9cbd
     );
 
     public static $classMap = array (
+        'AtlasDB\\PixalsLibs\\Connection' => __DIR__ . '/..' . '/pixals/atlas/src/AtlasDB/PixalsLibs/Connection.php',
+        'AtlasDB\\PixalsLibs\\ConnectionManager' => __DIR__ . '/..' . '/pixals/atlas/src/AtlasDB/PixalsLibs/ConnectionManager.php',
+        'AtlasDB\\PixalsLibs\\managers\\WorkersManager' => __DIR__ . '/..' . '/pixals/atlas/src/AtlasDB/PixalsLibs/managers/WorkersManager.php',
+        'AtlasDB\\PixalsLibs\\queries\\QueriesManager' => __DIR__ . '/..' . '/pixals/atlas/src/AtlasDB/PixalsLibs/queries/QueriesManager.php',
+        'AtlasDB\\PixalsLibs\\threads\\AtlasQuery' => __DIR__ . '/..' . '/pixals/atlas/src/AtlasDB/PixalsLibs/threads/AtlasQuery.php',
+        'AtlasDB\\PixalsLibs\\threads\\AtlasWorker' => __DIR__ . '/..' . '/pixals/atlas/src/AtlasDB/PixalsLibs/threads/AtlasWorker.php',
         'AttachableLogger' => __DIR__ . '/..' . '/pocketmine/log/src/AttachableLogger.php',
         'BufferedLogger' => __DIR__ . '/..' . '/pocketmine/log/src/BufferedLogger.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',

@@ -18,6 +18,7 @@ namespace raklib\server;
 
 use pocketmine\utils\BinaryDataException;
 use raklib\generic\DisconnectReason;
+use raklib\generic\PacketHandlingException;
 use raklib\generic\Session;
 use raklib\generic\SocketException;
 use raklib\protocol\ACK;
@@ -29,6 +30,7 @@ use raklib\protocol\PacketSerializer;
 use raklib\utils\ExceptionTraceCleaner;
 use raklib\utils\InternetAddress;
 use function asort;
+use function assert;
 use function bin2hex;
 use function count;
 use function get_class;
@@ -213,6 +215,9 @@ class Server implements ServerInterface{
 		if($buffer === null){
 			return false; //no data
 		}
+		assert($addressIp !== null, "Can't be null if we got a buffer");
+		assert($addressPort !== null, "Can't be null if we got a buffer");
+
 		$len = strlen($buffer);
 
 		$this->receiveBytes += $len;
@@ -247,7 +252,12 @@ class Server implements ServerInterface{
 						$packet = new Datagram();
 					}
 					$packet->decode(new PacketSerializer($buffer));
-					$session->handlePacket($packet);
+					try{
+						$session->handlePacket($packet);
+					}catch(PacketHandlingException $e){
+						$session->getLogger()->error("Error receiving packet: " . $e->getMessage());
+						$session->forciblyDisconnect($e->getDisconnectReason());
+					}
 					return true;
 				}elseif($session->isConnected()){
 					//allows unconnected packets if the session is stuck in DISCONNECTING state, useful if the client

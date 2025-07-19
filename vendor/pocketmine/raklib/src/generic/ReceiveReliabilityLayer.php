@@ -84,8 +84,14 @@ final class ReceiveReliabilityLayer{
 
 	/**
 	 * Processes a split part of an encapsulated packet.
+	 * If an error occurs (limit exceeded, inconsistent header, etc.) a PacketHandlingException is thrown.
+	 *
+	 * An error processing a split packet means we can't fulfill reliability promises, which at best would lead to some
+	 * packets not arriving, and in the worst case (reliable-ordered) cause no more packets to be processed.
+	 * Therefore, the owning session MUST disconnect the peer if this exception is thrown.
 	 *
 	 * @return null|EncapsulatedPacket Reassembled packet if we have all the parts, null otherwise.
+	 * @throws PacketHandlingException if there was a problem with processing the split packet.
 	 */
 	private function handleSplit(EncapsulatedPacket $packet) : ?EncapsulatedPacket{
 		if($packet->splitInfo === null){
@@ -93,24 +99,21 @@ final class ReceiveReliabilityLayer{
 		}
 		$totalParts = $packet->splitInfo->getTotalPartCount();
 		$partIndex = $packet->splitInfo->getPartIndex();
-		if(
-			$totalParts >= $this->maxSplitPacketPartCount or $totalParts < 0 or
-			$partIndex >= $totalParts or $partIndex < 0
-		){
-			$this->logger->debug("Invalid split packet part, too many parts or invalid split index (part index $partIndex, part count $totalParts)");
-			return null;
+		if($totalParts >= $this->maxSplitPacketPartCount || $totalParts < 0){
+			throw new PacketHandlingException("Invalid split packet part count ($totalParts)", DisconnectReason::SPLIT_PACKET_TOO_LARGE);
+		}
+		if($partIndex >= $totalParts || $partIndex < 0){
+			throw new PacketHandlingException("Invalid split packet part index (part index $partIndex, part count $totalParts)", DisconnectReason::SPLIT_PACKET_INVALID_PART_INDEX);
 		}
 
 		$splitId = $packet->splitInfo->getId();
 		if(!isset($this->splitPackets[$splitId])){
 			if(count($this->splitPackets) >= $this->maxConcurrentSplitPackets){
-				$this->logger->debug("Ignored split packet part because reached concurrent split packet limit of $this->maxConcurrentSplitPackets");
-				return null;
+				throw new PacketHandlingException("Exceeded concurrent split packet reassembly limit of $this->maxConcurrentSplitPackets", DisconnectReason::SPLIT_PACKET_TOO_MANY_CONCURRENT);
 			}
 			$this->splitPackets[$splitId] = array_fill(0, $totalParts, null);
 		}elseif(count($this->splitPackets[$splitId]) !== $totalParts){
-			$this->logger->debug("Wrong split count $totalParts for split packet $splitId, expected " . count($this->splitPackets[$splitId]));
-			return null;
+			throw new PacketHandlingException("Wrong split count $totalParts for split packet $splitId, expected " . count($this->splitPackets[$splitId]), DisconnectReason::SPLIT_PACKET_INCONSISTENT_HEADER);
 		}
 
 		$this->splitPackets[$splitId][$partIndex] = $packet;
@@ -142,6 +145,9 @@ final class ReceiveReliabilityLayer{
 		return $pk;
 	}
 
+	/**
+	 * @throws PacketHandlingException
+	 */
 	private function handleEncapsulatedPacket(EncapsulatedPacket $packet) : void{
 		if($packet->messageIndex !== null){
 			//check for duplicates or out of range
@@ -209,6 +215,9 @@ final class ReceiveReliabilityLayer{
 		}
 	}
 
+	/**
+	 * @throws PacketHandlingException
+	 */
 	public function onDatagram(Datagram $packet) : void{
 		if($packet->seqNumber < $this->windowStart or $packet->seqNumber > $this->windowEnd or isset($this->ACKQueue[$packet->seqNumber])){
 			$this->logger->debug("Received duplicate or out-of-window packet (sequence number $packet->seqNumber, window " . $this->windowStart . "-" . $this->windowEnd . ")");

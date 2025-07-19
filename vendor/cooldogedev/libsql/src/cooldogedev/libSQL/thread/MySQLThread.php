@@ -48,7 +48,7 @@ final class MySQLThread extends SQLThread
     {
         self::$connection = new mysqli($this->host, $this->username, $this->password, $this->database, $this->port);
 
-        if (self::$connection->connect_error) {
+        if (self::$connection->connect_errno !== 0) {
             throw new RuntimeException(self::$connection->connect_error, self::$connection->connect_errno);
         }
     }

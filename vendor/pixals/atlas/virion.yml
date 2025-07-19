@@ -1,0 +1,5 @@
+name: AtlasDB
+author: oPinqzz
+antigen: AtlasDB\PixalsLibs
+api: [ 5.0.0 ]
+version: 1.0.0

@@ -6,6 +6,12 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AtlasDB\\PixalsLibs\\Connection' => $vendorDir . '/pixals/atlas/src/AtlasDB/PixalsLibs/Connection.php',
+    'AtlasDB\\PixalsLibs\\ConnectionManager' => $vendorDir . '/pixals/atlas/src/AtlasDB/PixalsLibs/ConnectionManager.php',
+    'AtlasDB\\PixalsLibs\\managers\\WorkersManager' => $vendorDir . '/pixals/atlas/src/AtlasDB/PixalsLibs/managers/WorkersManager.php',
+    'AtlasDB\\PixalsLibs\\queries\\QueriesManager' => $vendorDir . '/pixals/atlas/src/AtlasDB/PixalsLibs/queries/QueriesManager.php',
+    'AtlasDB\\PixalsLibs\\threads\\AtlasQuery' => $vendorDir . '/pixals/atlas/src/AtlasDB/PixalsLibs/threads/AtlasQuery.php',
+    'AtlasDB\\PixalsLibs\\threads\\AtlasWorker' => $vendorDir . '/pixals/atlas/src/AtlasDB/PixalsLibs/threads/AtlasWorker.php',
     'AttachableLogger' => $vendorDir . '/pocketmine/log/src/AttachableLogger.php',
     'BufferedLogger' => $vendorDir . '/pocketmine/log/src/BufferedLogger.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',

@@ -155,6 +155,10 @@ abstract class Session{
 		return intdiv(hrtime(true), 1_000_000);
 	}
 
+	public function getLogger() : \Logger{
+		return $this->logger;
+	}
+
 	public function getAddress() : InternetAddress{
 		return $this->address;
 	}
@@ -266,15 +270,22 @@ abstract class Session{
 	 * @param int $sendPongTime TODO: clock differential stuff
 	 */
 	private function handlePong(int $sendPingTime, int $sendPongTime) : void{
-		$currentTime = $this->getRakNetTimeMS();
-		if($currentTime < $sendPingTime){
-			$this->logger->debug("Received invalid pong: timestamp is in the future by " . ($sendPingTime - $currentTime) . " ms");
+		if($sendPingTime < 0){
+			$this->logger->debug("Received invalid pong: timestamp overflow");
 		}else{
-			$this->lastPingMeasure = $currentTime - $sendPingTime;
-			$this->onPingMeasure($this->lastPingMeasure);
+			$currentTime = $this->getRakNetTimeMS();
+			if($currentTime < $sendPingTime){
+				$this->logger->debug("Received invalid pong: timestamp is in the future by " . ($sendPingTime - $currentTime) . " ms");
+			}else{
+				$this->lastPingMeasure = $currentTime - $sendPingTime;
+				$this->onPingMeasure($this->lastPingMeasure);
+			}
 		}
 	}
 
+	/**
+	 * @throws PacketHandlingException
+	 */
 	public function handlePacket(Packet $packet) : void{
 		$this->isActive = true;
 		$this->lastUpdate = microtime(true);
