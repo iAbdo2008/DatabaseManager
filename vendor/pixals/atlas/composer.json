@@ -10,7 +10,6 @@
     "require": {
         "sof3/await-generator": "^3.6"
     },
-    "minimum-stability": "stable",
     "autoload": {"classmap": ["src"]},
     "extra": {
         "virion": {

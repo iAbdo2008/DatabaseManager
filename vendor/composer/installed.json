@@ -184,18 +184,18 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Pixals-Bedrock/Atlas.git",
-                "reference": "da7a96c7b326e0bffa286a059f94fa06e5ace59a"
+                "reference": "1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/da7a96c7b326e0bffa286a059f94fa06e5ace59a",
-                "reference": "da7a96c7b326e0bffa286a059f94fa06e5ace59a",
+                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00",
+                "reference": "1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00",
                 "shasum": ""
             },
             "require": {
                 "sof3/await-generator": "^3.6"
             },
-            "time": "2025-07-19T19:43:41+00:00",
+            "time": "2025-07-19T21:14:22+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {

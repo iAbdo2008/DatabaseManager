@@ -20,8 +20,7 @@ Built to solve the latency and blocking issues caused by synchronous queries on 
 - To Get Data From The Query:
 ```php
 Await::f2c(function(){
-  $deferred = new DeferredResult();
-  $query = new TestQuery($deferred);
+  $query = new TestQuery();
   $result = yield from Await::promise(fn($accept) => (new QueriesManager)->executeQuery($query, $accept));
   var_dump($result);
 });
@@ -41,9 +40,9 @@ use mysqli;
 
 class TestQuery extends AtlasQuery {
 
-    public function __construct(DeferredResult $r)
+    public function __construct()
     {
-        parent::__construct($r);
+
     }
 
     public function doQuery(mysqli $connection): void
