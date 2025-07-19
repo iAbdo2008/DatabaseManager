@@ -1,6 +1,5 @@
 # DatabaseManager
-Easy Way to Execute and Fetch Queries Using LibSQL By cooldogdev
-
+A Middle Line in Pixals Infrastructure To Make it Easier to Execute Queries
 
 # API Implementation
 - Installation Using Composer 
