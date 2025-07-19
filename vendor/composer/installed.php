@@ -28,15 +28,6 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
-        'cooldogedev/libsql' => array(
-            'pretty_version' => 'v0.2.6',
-            'version' => '0.2.6.0',
-            'reference' => '9b44cd73fd24ad48a7dbcc434496d7218a000f9d',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../cooldogedev/libsql',
-            'aliases' => array(),
-            'dev_requirement' => false,
-        ),
         'daverandom/callback-validator' => array(
             'dev_requirement' => false,
             'replaced' => array(
@@ -61,7 +52,7 @@
         'pixals/atlas' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00',
+            'reference' => '5898bf5307c8aa31995d3f0e0017903954259f09',
             'type' => 'library',
             'install_path' => __DIR__ . '/../pixals/atlas',
             'aliases' => array(

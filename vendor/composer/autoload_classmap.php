@@ -23,12 +23,4 @@ return array(
     'Logger' => $vendorDir . '/pocketmine/log/src/Logger.php',
     'PrefixedLogger' => $vendorDir . '/pocketmine/log/src/PrefixedLogger.php',
     'SimpleLogger' => $vendorDir . '/pocketmine/log/src/SimpleLogger.php',
-    'cooldogedev\\libSQL\\ConnectionPool' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/ConnectionPool.php',
-    'cooldogedev\\libSQL\\exception\\SQLException' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/exception/SQLException.php',
-    'cooldogedev\\libSQL\\query\\MySQLQuery' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/query/MySQLQuery.php',
-    'cooldogedev\\libSQL\\query\\SQLQuery' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/query/SQLQuery.php',
-    'cooldogedev\\libSQL\\query\\SQLiteQuery' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/query/SQLiteQuery.php',
-    'cooldogedev\\libSQL\\thread\\MySQLThread' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/thread/MySQLThread.php',
-    'cooldogedev\\libSQL\\thread\\SQLThread' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/thread/SQLThread.php',
-    'cooldogedev\\libSQL\\thread\\SQLiteThread' => $vendorDir . '/cooldogedev/libsql/src/cooldogedev/libSQL/thread/SQLiteThread.php',
 );

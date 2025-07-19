@@ -126,76 +126,24 @@
             "install-path": "../brick/math"
         },
         {
-            "name": "cooldogedev/libsql",
-            "version": "v0.2.6",
-            "version_normalized": "0.2.6.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/cooldogepm/libSQL.git",
-                "reference": "9b44cd73fd24ad48a7dbcc434496d7218a000f9d"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/cooldogepm/libSQL/zipball/9b44cd73fd24ad48a7dbcc434496d7218a000f9d",
-                "reference": "9b44cd73fd24ad48a7dbcc434496d7218a000f9d",
-                "shasum": ""
-            },
-            "require": {
-                "ext-igbinary": "*",
-                "ext-mysqli": "*",
-                "ext-pmmpthread": "*",
-                "ext-sqlite3": "*"
-            },
-            "time": "2024-01-21T16:18:12+00:00",
-            "type": "library",
-            "extra": {
-                "virion": {
-                    "spec": "3.1",
-                    "namespace-root": "cooldogedev\\libSQL"
-                }
-            },
-            "installation-source": "dist",
-            "autoload": {
-                "classmap": [
-                    "src"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "cooldogedev",
-                    "email": "cooldogedev@gmail.com"
-                }
-            ],
-            "description": "A minimalistic implementation of asynchronous SQL",
-            "support": {
-                "issues": "https://github.com/cooldogepm/libSQL/issues",
-                "source": "https://github.com/cooldogepm/libSQL/tree/v0.2.6"
-            },
-            "install-path": "../cooldogedev/libsql"
-        },
-        {
             "name": "pixals/atlas",
             "version": "dev-main",
             "version_normalized": "dev-main",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Pixals-Bedrock/Atlas.git",
-                "reference": "1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00"
+                "reference": "5898bf5307c8aa31995d3f0e0017903954259f09"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00",
-                "reference": "1b4ae683f6156e0e4b0aaac497aabd6e90b3ce00",
+                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/5898bf5307c8aa31995d3f0e0017903954259f09",
+                "reference": "5898bf5307c8aa31995d3f0e0017903954259f09",
                 "shasum": ""
             },
             "require": {
                 "sof3/await-generator": "^3.6"
             },
-            "time": "2025-07-19T21:14:22+00:00",
+            "time": "2025-07-19T21:17:28+00:00",
             "default-branch": true,
             "type": "library",
             "extra": {

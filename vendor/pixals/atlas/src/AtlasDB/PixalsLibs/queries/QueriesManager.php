@@ -15,7 +15,7 @@ class QueriesManager {
 
     private static $queries = [];
 
-    public function executeQuery(AtlasQuery $atlasQuery, Closure $onSuccess) : void {
+    public function executeQuery(AtlasQuery $atlasQuery, ?Closure $onSuccess = null) : void {
         $queue = WorkersManager::getQueue();
         $queue[] = $atlasQuery; 
         self::$queries[spl_object_hash($atlasQuery)] = [$atlasQuery, $onSuccess];

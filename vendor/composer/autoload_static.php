@@ -165,14 +165,6 @@ class ComposerStaticInit8fcc8f34790a8f077bfecae050de9cbd
         'Logger' => __DIR__ . '/..' . '/pocketmine/log/src/Logger.php',
         'PrefixedLogger' => __DIR__ . '/..' . '/pocketmine/log/src/PrefixedLogger.php',
         'SimpleLogger' => __DIR__ . '/..' . '/pocketmine/log/src/SimpleLogger.php',
-        'cooldogedev\\libSQL\\ConnectionPool' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/ConnectionPool.php',
-        'cooldogedev\\libSQL\\exception\\SQLException' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/exception/SQLException.php',
-        'cooldogedev\\libSQL\\query\\MySQLQuery' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/query/MySQLQuery.php',
-        'cooldogedev\\libSQL\\query\\SQLQuery' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/query/SQLQuery.php',
-        'cooldogedev\\libSQL\\query\\SQLiteQuery' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/query/SQLiteQuery.php',
-        'cooldogedev\\libSQL\\thread\\MySQLThread' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/thread/MySQLThread.php',
-        'cooldogedev\\libSQL\\thread\\SQLThread' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/thread/SQLThread.php',
-        'cooldogedev\\libSQL\\thread\\SQLiteThread' => __DIR__ . '/..' . '/cooldogedev/libsql/src/cooldogedev/libSQL/thread/SQLiteThread.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
