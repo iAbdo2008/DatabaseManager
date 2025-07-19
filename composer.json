@@ -3,7 +3,6 @@
     "description": "A Database Managing Library Made By Pixals Lead Developer",
     "type": "library",
     "require": {
-        "cooldogedev/libsql": "^0.2.6",
         "sof3/await-generator": "^3.6",
         "pocketmine/pocketmine-mp": "5.18.1",
         "pixals/atlas": "dev-main"
