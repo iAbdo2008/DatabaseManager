@@ -4,7 +4,6 @@
     "type": "library",
     "require": {
         "sof3/await-generator": "^3.6",
-        "pocketmine/pocketmine-mp": "5.18.1",
         "pixals/atlas": "dev-main"
     },
     "authors": [

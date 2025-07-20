@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'SOFe\\AwaitGenerator\\' => array($vendorDir . '/sof3/await-generator/await-generator/src'),
-    'JsonMapper' => array($vendorDir . '/pocketmine/netresearch-jsonmapper/src'),
 );
