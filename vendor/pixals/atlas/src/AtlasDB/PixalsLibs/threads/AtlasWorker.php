@@ -5,6 +5,7 @@ namespace AtlasDB\PixalsLibs\threads;
 use AtlasDB\PixalsLibs\Connection;
 use AtlasDB\PixalsLibs\ConnectionManager;
 use AtlasDB\PixalsLibs\queries\QueriesManager;
+use Exception;
 use mysqli;
 use pocketmine\thread\NonThreadSafeValue;
 use pocketmine\thread\Thread;
@@ -41,7 +42,11 @@ class AtlasWorker extends Thread {
                     self::$db_connection = new mysqli($connection_data->getIP(), $connection_data->getUsername(), $connection_data->getPassword(), $connection_data->getDatabase(), $connection_data->getPort());
                 }
                 if($query instanceof AtlasQuery) {
-                    $query->doQuery(self::$db_connection);   
+                    try {
+                        $query->doQuery(self::$db_connection);   
+                    } catch (Exception $e) {
+                        $query->setError(new NonThreadSafeValue($e));
+                    }
                     unset($this->queue[array_search($query, (array) $this->queue)]);
                     
                 }

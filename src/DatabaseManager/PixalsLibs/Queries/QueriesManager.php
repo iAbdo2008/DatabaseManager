@@ -17,7 +17,7 @@ final class QueriesManager {
     
     public function fetchQuery(String $query, array $options, array $vars, Closure $onSuccess, Closure $onFail = null) : void {
         $running_query = new RunningQueries($query, $options, $vars);
-        (new AtlasQManager)->executeQuery($running_query, $onSuccess);  
+        (new AtlasQManager)->executeQuery($running_query, $onSuccess, $onFail);  
     }
 
 }

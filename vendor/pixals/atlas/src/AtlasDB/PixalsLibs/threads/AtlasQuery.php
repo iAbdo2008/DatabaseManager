@@ -21,12 +21,12 @@ use Throwable;
 class AtlasQuery extends ThreadSafe {
 
     private $result = null;
-    private $error;
+    private $error = null;
     private NonThreadSafeValue $deferred;
 
-    public function __construct(DeferredResult $dr)
+    public function __construct()
     {
-        $this->deferred = new NonThreadSafeValue($dr);
+
     }
 
 
@@ -48,8 +48,8 @@ class AtlasQuery extends ThreadSafe {
         $this->error = $e;
     }
 
-    public function getError() : ?String {
-        return $this->error->deserialize();
+    public function getError() : ?Throwable {
+        return $this->error == null ? null : $this->error->deserialize();
     }
 
     public function getDeferred() : DeferredResult {
