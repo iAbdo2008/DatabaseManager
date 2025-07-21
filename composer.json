@@ -4,7 +4,7 @@
     "type": "library",
     "require": {
         "sof3/await-generator": "^3.6",
-        "pixals/atlas": "dev-main"
+        "pixals/atlas": "dev-main#5898bf5"
     },
     "authors": [
         {
@@ -22,5 +22,3 @@
         }
     }
 }
-
-

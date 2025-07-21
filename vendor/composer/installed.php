@@ -22,7 +22,7 @@
         'pixals/atlas' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => 'a888aa8377e051ab9b8befe207bc462a6aa3bc10',
+            'reference' => '5898bf5',
             'type' => 'library',
             'install_path' => __DIR__ . '/../pixals/atlas',
             'aliases' => array(

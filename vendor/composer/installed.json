@@ -7,12 +7,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Pixals-Bedrock/Atlas.git",
-                "reference": "a888aa8377e051ab9b8befe207bc462a6aa3bc10"
+                "reference": "5898bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/a888aa8377e051ab9b8befe207bc462a6aa3bc10",
-                "reference": "a888aa8377e051ab9b8befe207bc462a6aa3bc10",
+                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/5898bf5",
+                "reference": "5898bf5",
                 "shasum": ""
             },
             "require": {

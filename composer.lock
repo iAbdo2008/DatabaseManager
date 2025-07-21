@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "57b516703fb2bb27d79d0a2b69f0f6fa",
+    "content-hash": "001b3b3d5d2d3d9f53fd6109204e9168",
     "packages": [
         {
             "name": "pixals/atlas",
@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Pixals-Bedrock/Atlas.git",
-                "reference": "a888aa8377e051ab9b8befe207bc462a6aa3bc10"
+                "reference": "5898bf5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/a888aa8377e051ab9b8befe207bc462a6aa3bc10",
-                "reference": "a888aa8377e051ab9b8befe207bc462a6aa3bc10",
+                "url": "https://api.github.com/repos/Pixals-Bedrock/Atlas/zipball/5898bf5",
+                "reference": "5898bf5",
                 "shasum": ""
             },
             "require": {

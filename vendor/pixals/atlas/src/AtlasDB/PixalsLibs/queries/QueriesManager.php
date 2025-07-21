@@ -15,23 +15,19 @@ class QueriesManager {
 
     private static $queries = [];
 
-    public function executeQuery(AtlasQuery $atlasQuery, ?Closure $onSuccess = null, ?Closure $onError = null) : void {
+    public function executeQuery(AtlasQuery $atlasQuery, ?Closure $onSuccess = null) : void {
         $queue = WorkersManager::getQueue();
         $queue[] = $atlasQuery; 
-        self::$queries[spl_object_hash($atlasQuery)] = [$atlasQuery, $onSuccess, $onError];
+        self::$queries[spl_object_hash($atlasQuery)] = [$atlasQuery, $onSuccess];
     }
 
     public function completionHandlerEnable(PluginBase $plugin) : void {
         $plugin->getScheduler()->scheduleRepeatingTask(new ClosureTask(function() {
-            foreach(self::$queries as $id => [$atlasQuery, $onSuccess, $onError]){
-                if($atlasQuery->getResult() !== null && $onSuccess !== null) {
+            foreach(self::$queries as $id => [$atlasQuery, $onSuccess]){
+                if($atlasQuery->getResult() !== null) {
                     ($onSuccess)($atlasQuery->getResult());
+                    unset(self::$queries[$id]);
                 }
-                if($atlasQuery->getError() !== null && $onError !== null) {
-                    ($onError)($atlasQuery->getError());
-                }
-
-                unset(self::$queries[$id]);
             }
         }), 1);
     }
