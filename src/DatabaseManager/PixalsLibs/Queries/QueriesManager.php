@@ -11,12 +11,12 @@ final class QueriesManager {
 
 
     public function executeQuery(String $query, array $option, array $vars) : void {
-        $running_query = new RunningQueries($query, $option, $vars);
+        $running_query = new Query($query, $option, $vars);
         (new AtlasQManager)->executeQuery($running_query);  
     }
     
     public function fetchQuery(String $query, array $options, array $vars, Closure $onSuccess, Closure $onFail = null) : void {
-        $running_query = new RunningQueries($query, $options, $vars);
+        $running_query = new Query($query, $options, $vars);
         (new AtlasQManager)->executeQuery($running_query, $onSuccess, $onFail);  
     }
 
