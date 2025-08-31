@@ -41,7 +41,9 @@ class Query extends AtlasQuery {
         $query = unserialize($this->query);
 
         $statement = $connection->prepare($query);
-        $statement->bind_param($this->getTypes($vars), ...$this->getValues($vars));
+        if($vars != []) {
+            $statement->bind_param($this->getTypes($vars), ...$this->getValues($vars));
+        }
         $statement->execute();
 
         if($options["type"] == "fetch") {
